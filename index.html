@@ -1,120 +1,234 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>CodePen - Responsive Resume Template</title>
-  <meta name="viewport" content="width=device-width"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вадим - Личный Блог</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Цветовая палитра */
+        :root {
+            --tea-green: #ccd5aeff;
+            --beige: #e9edc9ff;
+            --cornsilk: #fefae0ff;
+            --papaya-whip: #faedcdff;
+            --buff: #d4a373ff;
+        }
 
+        body, html {
+            height: 100%;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100vh;
+            padding: 50px;
+        }
+
+        /* Главный блок */
+        #about {
+            background-color: var(--cornsilk);
+            color: var(--buff);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .profile-left, .profile-right {
+            width: 45%;
+            text-align: left;
+        }
+
+        .profile-left h1, .profile-right h3 {
+            font-size: 2rem;
+        }
+
+        .profile-card {
+            background-color: var(--buff);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* Языки */
+        .languages .progress {
+            height: 20px;
+            margin-bottom: 15px;
+        }
+
+        .progress-bar {
+            text-indent: -9999px; /* Убираем текст с прогресс-баров */
+        }
+
+        /* Блок проектов */
+        #projects {
+            background-color: var(--tea-green);
+            color: var(--buff);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .project-tile, .contact-card {
+            background-color: var(--papaya-whip);
+            color: var(--buff);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .project-tile:hover, .contact-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Кнопка перехода */
+        .btn-scroll {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(212, 163, 115, 0.7);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn-scroll:hover {
+            background-color: var(--buff);
+            color: var(--papaya-whip);
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .section {
+                flex-direction: column;
+                justify-content: flex-start;
+                height: auto;
+                padding: 20px;
+            }
+
+            .profile-left, .profile-right {
+                width: 100%;
+                text-align: center;
+            }
+
+            .profile-left h1, .profile-right h3 {
+                font-size: 1.5rem;
+            }
+
+            .languages .progress-bar {
+                width: 100%;
+            }
+
+            .project-tile, .contact-card {
+                flex: 1 1 100%;
+                margin-bottom: 15px;
+            }
+
+            .btn-scroll {
+                bottom: 10%;
+                width: auto;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section {
+                padding: 10px;
+            }
+
+            .profile-left h1, .profile-right h3 {
+                font-size: 1.3rem;
+            }
+
+            .project-tile, .contact-card {
+                margin-bottom: 15px;
+            }
+
+            .project-tile, .contact-card {
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<div class="resume-wrapper">
-	<section class="profile section-padding">
-		<div class="container">
-			<div class="picture-resume-wrapper">
-        <div class="picture-resume">
-        <span><img src="image.png" alt="" /></span>
 
-      </div>
- </div>
-      <div class="name-wrapper">
-        <h1>Вадим <br/>Коробов</h1>
-        <h3>Стажер Python разработчик</h3>
-      </div>
-
-
-      <div class="clearfix"></div>
-      <div class="contact-info clearfix">
-      	<ul class="list-titles">
-      		<li>Call</li>
-      		<li>Mail</li>
-      		<li>Web</li>
-      		<li>City</li>
-      	</ul>
-        <ul class="list-content ">
-        	<li>+7 905 635 60 52</li>
-        	<li>korobovvad@mail.com</li>
-        	<li><a href="#">KVI's.com</a></li>
-        	<li>Ярославль</li>
-        </ul>
-      </div>
-      <div class="contact-presentation">
-      	<p><span class="bold"></span> Разрабатываю на Python почти все что угодно,бекэнд,скрипты,парсеры,а так же немного на c++,frontend.участвую в различных проектах и выкладываю на гитхаб, а также про то,что сделал на гитхаб, пишу статьи на хабр. Ищу интересные опыт разработки в большой компании.</p>
-      </div>
-      <div class="contact-social clearfix">
-      	<ul class="list-titles">
-      		<li>Telegram</li>
-      		<li>Habr</li>
-      		<li>Github</li>
-      	</ul>
-        <ul class="list-content">
-      		<li><a href="https://t.me/I_R0n1n_I">@I_R0n1n_I</a></li>
-      		<li><a href="https://habr.com/ru/users/R0n1n_i/">R0n1n_i</a></li>
-      		<li><a href="https://github.com/R0n1ns">R0n1ns</a></li>
-      	</ul>
-      </div>
-		</div>
-	</section>
-  
-  <section class="experience section-padding">
-  	<div class="container">
-  		<h3 class="experience-title">Образование</h3>
-      
-      <div class="experience-wrapper">
-      	<div class="company-wrapper clearfix">
-      		<div class="experience-title">ЯГТУ</div>
-          <div class="time">2023 - сейчас - 2027</div>
-      	</div>
-
-        <div class="job-wrapper clearfix">
-        	<div class="experience-title">Информационные системы и технологии </div>
-          <div class="company-description">
-          	<p>Во время обучения участвую в разработке проектов для вуза, а также в спортивнй жизни вуза.</p>
-          </div>
+    <!-- Главный блок с профилем -->
+    <section id="about" class="section">
+        <div class="profile-left">
+            <h1>Вадим</h1>
+            <h4>Backend-разработчик</h4>
+            <p>Я — Вадим, backend-разработчик с опытом на Python и Go. Периодически дружу с C++ для учебы, а базовые HTML/CSS помогают видеть результат даже на клиентской стороне.</p>
+            <p>📈 Что умею:</p>
+            <p>Проектирование и разработка RESTful API и микросервисов.</p>
+            <p>Разработка крупных личных full-stack проектов.</p>
+            <p>🎯 Почему я этим занимаюсь?</p>
+            <p>Потому что люблю, когда все работает быстро и без ошибок, особенно в приложениях, которые я сам ежедневно использую.</p>
+            <p>Постоянно учусь, рефакторю и нахожу способы сделать ещё лучше.</p>
         </div>
-
-        <h3 class="experience-title">Проекты</h3>
-        <div class="proj clearfix">
-      		<div class="experience-title">Бот для студентов</div>
-          <div class="time">Разработал бота для студентов, которого можно найти на моем гитхаб</div>
-      	</div> 
-        
-         <div class="proj clearfix">
-        	<div class="experience-title">Разрабтока для некомерцичкий организаций</div>
-          <div class="company-description">
-          	<p>Разработка телеграм ботов для социально значимых и некомерческих организаций.</p>
-          </div>
+        <div class="profile-right">
+            <h3>Языки программирования:</h3>
+            <div class="languages">
+                <p>Python</p>
+                <div class="progress">
+                    <div class="progress-bar bg-success" style="width: 90%;"></div>
+                </div>
+                <p>Go</p>
+                <div class="progress">
+                    <div class="progress-bar bg-info" style="width: 70%;"></div>
+                </div>
+                <p>C++</p>
+                <div class="progress">
+                    <div class="progress-bar bg-warning" style="width: 50%;"></div>
+                </div>
+                <p>HTML/CSS</p>
+                <div class="progress">
+                    <div class="progress-bar bg-danger" style="width: 60%;"></div>
+                </div>
+            </div>
         </div>
-      </div>
-      
-      <div class="section-wrapper clearfix">
-      	<h3 class="section-title">Skills</h3>
-        	<ul>
-        		<li class="skill-percentage">HTML / CSS</li>
-        		<li class="skill-percentage">PYTHON</li>
-        		<li class="skill-percentage">Django</li>
-        		<li class="skill-percentage">C++</li>
-        		<li class="skill-percentage">JAVA / C#</li>
+        <button class="btn btn-scroll" onclick="location.href='#projects'">Вниз к проектам</button>
+    </section>
 
-        	</ul>
-        
-      </div>
-      
-      <div class="section-wrapper clearfix">
-        <h3 class="section-title">Hobbies</h3>
-        <p>В свобдное от учебы и разработки время занимаюсь спортом,в частности баскетболом,который помогает выживать сидя часами за компьютером.</p>
-        
-        <p>А также изучаю английский язык для того ,чтобы учиться ,а также смотреть любимые сериалы в любое время.</p>
-      </div>
-      
-  	</div>
-  </section>
-  
-  <div class="clearfix"></div>
-</div>
-<!-- partial -->
-  <script src='//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script><script  src="./script.js"></script>
+    <!-- Блок с проектами и контактами -->
+    <section id="projects" class="section">
+        <div class="container text-center">
+            <h2>Мои проекты</h2>
+            <div class="row mb-4">
+                <div class="col-md-4"><div class="project-tile">Проект 1</div></div>
+                <div class="col-md-4"><div class="project-tile">Проект 2</div></div>
+                <div class="col-md-4"><div class="project-tile">Проект 3</div></div>
+                <div class="col-md-4"><div class="project-tile">Проект 4</div></div>
+                <div class="col-md-4"><div class="project-tile">Проект 5</div></div>
+                <div class="col-md-4"><div class="project-tile">Проект 6</div></div>
+            </div>
+            <h2>Контакты</h2>
+            <div class="row">
+                <div class="col-md-3"><div class="contact-card">VK</div></div>
+                <div class="col-md-3"><div class="contact-card">Telegram</div></div>
+                <div class="col-md-3"><div class="contact-card">Почта</div></div>
+                <div class="col-md-3"><div class="contact-card">GitHub</div></div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Скрипты -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
