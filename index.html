@@ -170,8 +170,8 @@
     <!-- Главный блок с профилем -->
     <section id="about" class="section">
         <div class="profile-left">
-            <h1>Вадим</h1>
-            <h4>Backend-разработчик</h4>
+            <h1>Вадим Коробов</h1>
+            <h4 style="color: #ff6731">Backend-разработчик</h4>
             <p>Я — Вадим, backend-разработчик с опытом на Python и Go. Периодически дружу с C++ для учебы, а базовые HTML/CSS помогают видеть результат даже на клиентской стороне.</p>
             <p>📈 Что умею:</p>
             <p>Проектирование и разработка RESTful API и микросервисов.</p>
@@ -183,19 +183,19 @@
         <div class="profile-right">
             <h3>Языки программирования:</h3>
             <div class="languages">
-                <p>Python</p>
+                <h5 style="color: #ff6731">Python</h5>
                 <div class="progress">
                     <div class="progress-bar bg-success" style="width: 90%;"></div>
                 </div>
-                <p>Go</p>
+                <h5 style="color: #ff6731">Go</h5>
                 <div class="progress">
                     <div class="progress-bar bg-info" style="width: 70%;"></div>
                 </div>
-                <p>C++</p>
+                <h5>C++</h5>
                 <div class="progress">
                     <div class="progress-bar bg-warning" style="width: 50%;"></div>
                 </div>
-                <p>HTML/CSS</p>
+                <h5>HTML/CSS</h5>
                 <div class="progress">
                     <div class="progress-bar bg-danger" style="width: 60%;"></div>
                 </div>
@@ -209,23 +209,36 @@
         <div class="container text-center">
             <h2>Мои проекты</h2>
             <div class="row mb-4">
-                <div class="col-md-4"><div class="project-tile">Проект 1</div></div>
-                <div class="col-md-4"><div class="project-tile">Проект 2</div></div>
-                <div class="col-md-4"><div class="project-tile">Проект 3</div></div>
-                <div class="col-md-4"><div class="project-tile">Проект 4</div></div>
-                <div class="col-md-4"><div class="project-tile">Проект 5</div></div>
-                <div class="col-md-4"><div class="project-tile">Проект 6</div></div>
+                <div class="col-md-4"><div class="project-tile">Интернет магазин wireguard (GO)</div></div>
+                <div class="col-md-4"><div class="project-tile">Библиотека для wireguard (GO)</div></div>
+                <div class="col-md-4"><div class="project-tile">АПИ мессендера (Python)</div></div>
+                <div class="col-md-4"><div class="project-tile">Проект от "Открытое производство"</div></div>
+                <div class="col-md-4"><div class="project-tile">Проект от "Открытое производство"</div></div>
+                <div class="col-md-4"><div class="project-tile">Проект от "Открытое производство"</div></div>
+                <div class="col-md-4"><div class="project-tile">Проект от "Открытое производство"</div></div>
+
             </div>
             <h2>Контакты</h2>
             <div class="row">
-                <div class="col-md-3"><div class="contact-card">VK</div></div>
-                <div class="col-md-3"><div class="contact-card">Telegram</div></div>
-                <div class="col-md-3"><div class="contact-card">Почта</div></div>
-                <div class="col-md-3"><div class="contact-card">GitHub</div></div>
+                <div class="col-md-3"><div class="contact-card" onclick="window.location.href='https://vk.com/ronin__i';" >VK</div></div>
+                <div class="col-md-3"><div class="contact-card" onclick="window.location.href='https://t.me/I_R0n1n_I';">Telegram</div></div>
+                <div class="col-md-3"><div class="contact-card" onclick="copyToClipboard('korobovvad@mail.ru')">Почта</div></div>
+                <div class="col-md-3"><div class="contact-card" onclick="window.location.href='https://github.com/R0n1ns';">GitHub</div></div>
             </div>
         </div>
     </section>
-
+<script>
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text)
+            .then(() => {
+                alert('Ссылка скопирована: ' + text);
+            })
+            .catch(err => {
+                console.error('Ошибка копирования: ', err);
+                alert('Не удалось скопировать текст.');
+            });
+    }
+</script>
     <!-- Скрипты -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
